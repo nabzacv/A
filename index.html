@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>باندا النور</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* style.css (Embedded) */
@@ -338,6 +338,53 @@
             margin-bottom: 8px;
         }
 
+        /* Reviews Section */
+        .reviews-section {
+            padding: 40px 0;
+            background-color: var(--light-bg);
+            margin-top: 40px; /* Spacing between tabs and reviews */
+            margin-bottom: 40px; /* Spacing between reviews and order form */
+        }
+
+        .reviews-section .section-title {
+            color: var(--secondary-color); /* A darker title for this section */
+            margin-bottom: 30px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: center; /* Center cards if they don't fill the row */
+        }
+
+        .review-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px var(--shadow-light);
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Push name to bottom */
+            min-height: 180px; /* Ensure cards have consistent height */
+        }
+
+        .review-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: var(--primary-color);
+            align-self: flex-end; /* Align name to the end (right in RTL) */
+            margin-top: auto; /* Push to bottom if content is short */
+        }
+
 
         /* Order Form Section */
         .order-form-section {
@@ -644,6 +691,7 @@
         .delay-400ms { animation-delay: 0.4s; }
         .delay-500ms { animation-delay: 0.5s; }
         .delay-600ms { animation-delay: 0.6s; }
+        .delay-700ms { animation-delay: 0.7s; } /* New delay for reviews */
         .delay-800ms { animation-delay: 0.8s; }
 
 
@@ -696,6 +744,20 @@
 
             .tab-content {
                 padding: 20px;
+            }
+
+            /* Reviews Section Media Queries */
+            .reviews-section {
+                padding: 30px 0;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+                padding: 0 15px; /* Add some padding to the sides */
+            }
+            .review-card {
+                min-height: unset; /* Remove fixed height on smaller screens */
             }
 
             .section-title {
@@ -793,8 +855,12 @@
             .tab-button {
                 font-size: 0.9em;
             }
+            .reviews-section .section-title,
             .section-title {
                 font-size: 1.8em;
+            }
+            .review-text {
+                font-size: 1em;
             }
             .order-form {
                 gap: 20px;
@@ -891,7 +957,41 @@
                             <li>دوس تاني علشان تغيّر مستوى الإضاءة حسب مزاجك (مريح – أهدى – شبه مطفي)</li>
                             <li>تقدر تحطه جنب السرير، على المكتب، أو في ركن هادي من أوضتك</li>
                              <li>خليه جنبك وانت بتقرأ، بتذاكر، أو حتى بتحاول تنام.. هيساعدك تهدى وتسترخي</li>
-                
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section container animate-slide-up delay-300ms">
+                <h2 class="section-title">آراء العملاء</h2>
+                <div class="reviews-grid">
+                    <div class="review-card animate-zoom-in delay-100ms">
+                        <p class="review-text">بجد تحفة جدا والنور بتاعه هادي ومريح للعين والباندا شكله كيوت اوي عجب ولادي جدا وبيخليهم يناموا بسهولة من غير خوف</p>
+                        <p class="reviewer-name">- سارة م</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-200ms">
+                        <p class="review-text">جودة الخامات ممتازة والبطارية بتقعد كتير جدا منتج يستاهل كل جنيه</p>
+                        <p class="reviewer-name">- أحمد ع</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-300ms">
+                        <p class="review-text">المصباح ده غير جو الاوضة تماما بقيت بحب اقعد فيها اكتر وهادية وبتساعد على الاسترخاء</p>
+                        <p class="reviewer-name">- فاطمة ا</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-400ms">
+                        <p class="review-text">وصلني في ميعاده بالظبط والتغليف كان ممتاز والمندوب كان محترم شكرا ليكم</p>
+                        <p class="reviewer-name">- محمود س</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-500ms">
+                        <p class="review-text">كنت قلقانة من الشراء اونلاين بس بصراحة المنتج طلع احلى من الصور بكتير</p>
+                        <p class="reviewer-name">- ندى ح</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-600ms">
+                        <p class="review-text">فكره عظيمه بصراحه وعملي جدا و شكله جميل بيضيف لمسة مميزة لأي مكان</p>
+                        <p class="reviewer-name">- عمر ف</p>
+                    </div>
+                    <div class="review-card animate-zoom-in delay-700ms">
+                        <p class="review-text">انصح بيه اي حد بيدور على اضاءة هادية ومبتكرة لغرفة النوم او الاطفال</p>
+                        <p class="reviewer-name">- ليلي ط</p>
                     </div>
                 </div>
             </section>
@@ -1029,8 +1129,18 @@
             }, 2000); // Hide after 2 seconds
 
             // --- Countdown Timer Functionality ---
-            const countdownDate = new Date();
-            countdownDate.setDate(countdownDate.getDate() + 3); // Set countdown for 3 days from now
+            const countdownId = 'productCountdown'; // معرف فريد لهذا العداد
+            let countdownEndDate = localStorage.getItem(countdownId);
+
+            if (countdownEndDate) {
+                // إذا كان تاريخ الانتهاء مخزّنًا بالفعل، استخدمه
+                countdownEndDate = new Date(countdownEndDate);
+            } else {
+                // إذا لم يكن مخزّنًا، احسب تاريخ انتهاء جديد (3 أيام من الآن) واخزنه
+                countdownEndDate = new Date();
+                countdownEndDate.setDate(countdownEndDate.getDate() + 3);
+                localStorage.setItem(countdownId, countdownEndDate.toISOString());
+            }
 
             const daysSpan = document.getElementById('days');
             const hoursSpan = document.getElementById('hours');
@@ -1039,22 +1149,23 @@
 
             function updateCountdown() {
                 const now = new Date().getTime();
-                const distance = countdownDate.getTime() - now;
+                const distance = countdownEndDate.getTime() - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown').innerHTML = "<span style='font-size: 1.2em; color: white;'>انتهى العرض!</span>";
+                    return; // Stop function execution if countdown is over
+                }
 
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 daysSpan.textContent = String(days).padStart(2, '0');
                 hoursSpan.textContent = String(hours).padStart(2, '0');
                 minutesSpan.textContent = String(minutes).padStart(2, '0');
                 secondsSpan.textContent = String(seconds).padStart(2, '0');
-
-                if (distance < 0) {
-                    clearInterval(countdownInterval);
-                    document.getElementById('countdown').innerHTML = "انتهى العرض!";
-                }
             }
 
             const countdownInterval = setInterval(updateCountdown, 1000);
